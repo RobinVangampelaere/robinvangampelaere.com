@@ -1,0 +1,224 @@
+@import './imports/variables.scss';
+
+body {
+	::selection {
+		background-color: $Color-3;
+	}
+
+	nav {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		padding-top: 20px;
+		margin-bottom: 50px;
+		font-size: 2.2em;
+
+		a {
+			margin: 0 10px;
+			transition-duration: 0.1s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	main {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+
+		p.name {
+			font-family: 'Montserrat', sans-serif;
+			text-transform: uppercase;
+			font-size: calc(12px + 4vw);
+			font-weight: 900;
+
+			span.colored {
+				color: $Color-3;
+			}
+		}
+
+		p.undertext {
+			max-width: 600px;
+			font-size: 1.2em;
+			line-height: 1.3;
+			padding: 0 20px;
+			margin: 50px 0;
+			text-align: justify;
+
+			span.colored {
+				color: $Color-3;
+				font-size: 1.6em;
+			}
+		}
+
+		div.interests,
+		div.experience {
+			display: flex;
+			flex-flow: row nowrap;
+			max-width: 800px;
+			width: 800px;
+			padding: 0 10px;
+			margin-bottom: 50px;
+			$break-width: 700px;
+
+			@media screen and (max-width: $break-width) {
+				flex-flow: column nowrap;
+				width: calc(100% - 20px);
+			}
+
+			p.title {
+				width: 50%;
+				font-family: 'Montserrat', sans-serif;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 2em;
+				margin-right: 10px;
+				text-align: right;
+
+				@media screen and (max-width: $break-width) {
+					width: calc(100% - 40px);
+					padding: 0 20px;
+					margin: 0;
+					text-align: center;
+					margin-bottom: 5px;
+				}
+			}
+
+			ul {
+				width: 50%;
+				margin-left: 10px;
+
+				@media screen and (max-width: $break-width) {
+					width: calc(100% - 40px);
+					padding: 0 20px;
+					margin: 0;
+				}
+				li {
+					margin-bottom: 20px;
+					p.head {
+						font-family: 'Montserrat', sans-serif;
+						text-transform: uppercase;
+						font-weight: 600;
+						font-size: 1.3em;
+						white-space: nowrap;
+
+						a {
+							text-decoration: underline;
+							font-size: 0.6em;
+							font-weight: 500;
+						}
+					}
+
+					p.date {
+						margin-bottom: 8px;
+					}
+
+					p.explain {
+						text-align: justify;
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+	}
+
+	div.resume {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background-color: $Color-3;
+		color: $Color-background;
+		padding: 50px 0;
+
+		i {
+			font-size: 3em;
+			margin-bottom: 5px;
+		}
+
+		p.head {
+			font-family: 'Montserrat', sans-serif;
+			text-transform: uppercase;
+			font-weight: 800;
+			font-size: 2em;
+		}
+
+		::selection {
+			background-color: $Color-background;
+			color: $Color-3;
+		}
+
+		a {
+			font-family: 'Montserrat', sans-serif;
+			color: $Color-background;
+			margin: 20px 0 0 0;
+			font-size: 1.2em;
+			font-weight: 800;
+			text-transform: uppercase;
+			border-bottom: 2px solid;
+
+			transition-duration: 0.1s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	div.mail {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 50px 0;
+
+		i {
+			font-size: 3em;
+			margin-bottom: 5px;
+		}
+
+		p.head {
+			font-family: 'Montserrat', sans-serif;
+			text-transform: uppercase;
+			font-weight: 800;
+			font-size: 2em;
+		}
+
+		a {
+			font-family: 'Montserrat', sans-serif;
+			margin: 20px 0 0 0;
+			font-size: 1.2em;
+			font-weight: 800;
+			text-transform: uppercase;
+			border-bottom: 2px solid;
+			transition-duration: 0.1s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	footer {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		text-transform: uppercase;
+		font-size: 1em;
+		font-weight: 300;
+		background-color: $Color-3;
+		color: $Color-background;
+		height: 35px;
+		::selection {
+			background-color: $Color-background;
+			color: $Color-3;
+		}
+	}
+}

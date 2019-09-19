@@ -8,7 +8,7 @@ Repository for my personal website.
 
 ---
 
-## Support
+## Contact
 
 Reach out to me at one of the following places!
 

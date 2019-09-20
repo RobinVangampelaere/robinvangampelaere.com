@@ -4,7 +4,7 @@
 
 Repository for my personal website.
 
-[![INSERT YOUR GRAPHIC HERE](./static/project_example.jpg)]()
+![Image of website](./static/project_example.jpg)
 
 ---
 

